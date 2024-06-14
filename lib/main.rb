@@ -26,12 +26,5 @@ random = arreglo[rand(0..arreglo.length)]
 tablero = string_to_sudoku(random)
 
 puts "el tablero a resolver es: "
-tablero.each do |fila|
-  fila.each do |number|
-    print "   "
-    print number
-    print "   "
-  end
-  puts "\n\n"
-end
+imprimir_tablero(tablero)
 

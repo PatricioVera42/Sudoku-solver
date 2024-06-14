@@ -1,5 +1,4 @@
 
-
 def string_to_sudoku(string)
   arreglo = []
 
@@ -10,4 +9,15 @@ def string_to_sudoku(string)
   end
 
   arreglo
+end
+
+def imprimir_tablero(tablero)
+  tablero.each do |fila|
+    fila.each do |number|
+      print "   "
+      print number
+      print "   "
+    end
+    puts "\n\n"
+  end
 end
