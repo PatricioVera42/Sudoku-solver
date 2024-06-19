@@ -21,3 +21,26 @@ def imprimir_tablero(tablero)
     puts "\n\n"
   end
 end
+
+class Tablero_sudoku
+  
+  attr_accessor :tablero
+  
+  def initialize(tablero)
+    @tablero = string_to_sudoku(tablero)
+  end
+
+  def empty_positions(tablero)
+    empty_positions = []
+    for row in 0...tablero.length
+      for col in 0...tablero.length
+        if tablero[row][col] == 0
+          empty_positions << [row,col]
+        end
+      end
+    end
+
+    empty_positions
+  end
+  
+end
