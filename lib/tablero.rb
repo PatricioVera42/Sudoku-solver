@@ -43,9 +43,9 @@ class Tablero_sudoku
     empty_positions
   end
 
-  def check_row(board, row, number)
-    for col in 0...board[row].length
-      if board[row][col] == number
+  def check_row(tablero, row, number)
+    for col in 0...tablero[row].length
+      if tablero[row][col] == number
         return false
       end
     end
@@ -53,14 +53,37 @@ class Tablero_sudoku
     true
   end
 
-  def check_col(board, col, number)
-    for row in 0...board.length
-      if board[row][col] == number
+  def check_col(tablero, col, number)
+    for row in 0...tablero.length
+      if tablero[row][col] == number
         return false
       end
     end
   
     true
+  end
+
+  def check_block(tablero, row, col, number)
+    lower_row = 3 * (row / 3)
+    lower_col = 3 * (col / 3)
+    upper_row = lower_row + 3
+    upper_col = lower_col + 3
+  
+    for r in lower_row...upper_row
+      for c in lower_col...upper_col
+        if tablero[r][c] == number
+          return false
+        end
+      end
+    end
+  
+    true
+  end
+
+  def check_value(tablero, row, col, number)
+    check_row(tablero, row, number) &&
+      check_col(tablero, col, number) &&
+      check_block(tablero, row, col, number)
   end
   
 end

@@ -28,5 +28,8 @@ imprimir_tablero(sudoku.tablero)
 p sudoku.empty_positions(sudoku.tablero)
 p sudoku.check_row(sudoku.tablero, 0 , 2)
 p sudoku.check_col(sudoku.tablero, 0 , 2)
+p sudoku.check_block(sudoku.tablero, 0 , 0, 2)
+p sudoku.check_value(sudoku.tablero, 0 , 0, 2)
+
 
 
