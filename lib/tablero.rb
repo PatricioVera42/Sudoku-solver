@@ -52,5 +52,15 @@ class Tablero_sudoku
   
     true
   end
+
+  def check_col(board, col, number)
+    for row in 0...board.length
+      if board[row][col] == number
+        return false
+      end
+    end
+  
+    true
+  end
   
 end
