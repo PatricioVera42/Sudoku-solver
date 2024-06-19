@@ -3,7 +3,7 @@ require_relative("tablero")
 puts "Que Dificultad? \n (facil,medio o dificil)"
 dificultad = gets.chomp
 while (dificultad != "facil" && dificultad != "medio" && dificultad != "dificil")
-  puts "Caracter invalido, elegir entre facil (facil), medio (medio) o dificil (dificil) \n"
+  puts "Caracter invalido, elegir entre facil, medio o dificil \n"
   dificultad = gets.chomp
 end
 case dificultad
@@ -23,13 +23,7 @@ end
 
 random = arreglo[rand(0..arreglo.length)]
 sudoku = Tablero_sudoku.new(random)
-puts "el tablero a resolver es: "
-imprimir_tablero(sudoku.tablero)
-p sudoku.empty_positions(sudoku.tablero)
-p sudoku.check_row(sudoku.tablero, 0 , 2)
-p sudoku.check_col(sudoku.tablero, 0 , 2)
-p sudoku.check_block(sudoku.tablero, 0 , 0, 2)
-p sudoku.check_value(sudoku.tablero, 0 , 0, 2)
-
-
+sudoku.imprimir_tablero
+sudoku.solve_puzzle(sudoku.tablero,sudoku.posiciones_vacias(sudoku.tablero))
+sudoku.imprimir_tablero
 
