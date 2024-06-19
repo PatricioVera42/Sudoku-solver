@@ -26,5 +26,6 @@ sudoku = Tablero_sudoku.new(random)
 puts "el tablero a resolver es: "
 imprimir_tablero(sudoku.tablero)
 p sudoku.empty_positions(sudoku.tablero)
+p sudoku.check_row(sudoku.tablero, 0 , 2)
 
 
