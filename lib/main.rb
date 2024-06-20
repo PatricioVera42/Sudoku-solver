@@ -24,6 +24,5 @@ end
 random = arreglo[rand(0..arreglo.length)]
 sudoku = Tablero_sudoku.new(random)
 sudoku.imprimir_tablero
-sudoku.solve_puzzle(sudoku.tablero,sudoku.posiciones_vacias(sudoku.tablero))
-sudoku.imprimir_tablero
+sudoku.resolver_backtracking(sudoku.tablero,sudoku.posiciones_vacias(sudoku.tablero))
 

@@ -20,7 +20,6 @@ class Tablero_sudoku
   end
 
   def imprimir_tablero
-    puts "el tablero: "
     @tablero.each do |fila|
       fila.each do |number|
         print "   "
@@ -87,7 +86,7 @@ class Tablero_sudoku
       check_bloque(tablero, fila, col, num)
   end
   
-  def solve_puzzle(tablero, posiciones_vacias)
+  def resolver_backtracking(tablero, posiciones_vacias)
     i = 0
     
     while i < posiciones_vacias.length
@@ -111,7 +110,8 @@ class Tablero_sudoku
         i -= 1
       end
     end
-    
+    puts "el tablero resuelto es: "
+    imprimir_tablero()
     tablero
   end
 
