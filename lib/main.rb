@@ -1,4 +1,5 @@
 require_relative("tablero")
+require 'benchmark'
 
 puts "Que Dificultad? \n (facil,medio o dificil)"
 dificultad = gets.chomp
@@ -24,5 +25,8 @@ end
 random = arreglo[rand(0..arreglo.length)]
 sudoku = Tablero_sudoku.new(random)
 sudoku.imprimir_tablero
-sudoku.resolver_backtracking(sudoku.tablero,sudoku.posiciones_vacias(sudoku.tablero))
+time = Benchmark.measure do
+  sudoku.resolver_backtracking(sudoku.tablero,sudoku.posiciones_vacias(sudoku.tablero))
+end
+puts time.real.to_s + " segundos"
 

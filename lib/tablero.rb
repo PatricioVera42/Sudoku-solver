@@ -110,7 +110,7 @@ class Tablero_sudoku
         i -= 1
       end
     end
-    puts "el tablero resuelto es: "
+    puts "el sudoku resuelto es: "
     imprimir_tablero()
     tablero
   end
